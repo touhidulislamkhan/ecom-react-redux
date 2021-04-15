@@ -14,18 +14,27 @@ function ProductDetails() {
 
     const dispatch = useDispatch();
 
-    const fetchProductDetail = async (id) => {
-        const response = await axios.get(`https://fakestoreapi.com/products/${id}`)
-            .catch(err => console.log(err))
-        // console.log(response);
-        dispatch(selectedproduct(response.data));
-    }
+    // const fetchProductDetail = async (id) => {
+    //     const response = await axios.get(`https://fakestoreapi.com/products/${id}`)
+    //         .catch(err => console.log(err))
+    //     // console.log(response);
+    //     dispatch(selectedproduct(response.data));
+    // }
+    // useEffect(() => {
+    //     if (productId && productId !== "") {
+    //         fetchProductDetail(productId)
+    //     }
+    //     return () => {
+    //         dispatch(removeSelectedProduct());
+    //     }
+    // }, [productId])
+
     useEffect(() => {
         if (productId && productId !== "") {
-            fetchProductDetail(productId)
+            dispatch(selectedproduct(productId));
         }
         return () => {
-            dispatch(removeSelectedProduct());
+            dispatch(removeSelectedProduct())
         }
     }, [productId])
 

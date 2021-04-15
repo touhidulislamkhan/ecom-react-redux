@@ -11,15 +11,19 @@ function ProductListing() {
     // console.log(products);
     const dispatch = useDispatch();
 
-    const fetchProducts = async () => {
-        const response = await axios.get('https://fakestoreapi.com/products')
-            .catch(err => console.log('Err', err.message))
-        // console.log(response.data);
-        dispatch(setproducts(response.data));
-    }
+    // const fetchProducts = async () => {
+    //     const response = await axios.get('https://fakestoreapi.com/products')
+    //         .catch(err => console.log('Err', err.message))
+    //     // console.log(response.data);
+    //     dispatch(setproducts(response.data));
+    // }
+
+    // useEffect(() => {
+    //     fetchProducts();
+    // }, [])
 
     useEffect(() => {
-        fetchProducts();
+        dispatch(setproducts())
     }, [])
 
     return (
