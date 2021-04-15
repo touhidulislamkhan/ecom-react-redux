@@ -1,11 +1,5 @@
 const initialState = {
-    products: [
-        {
-            id: 1,
-            product: 'Hello',
-            description: ""
-        },
-    ],
+    products: [],
 }
 
 export const productReducer = (state = initialState, action) => {
