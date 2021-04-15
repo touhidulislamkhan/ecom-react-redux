@@ -1,7 +1,11 @@
 const initialState = {
-    id: 1,
-    product: 'Hello',
-    description: ""
+    products: [
+        {
+            id: 1,
+            product: 'Hello',
+            description: ""
+        },
+    ],
 }
 
 export const productReducer = (state = initialState, action) => {
@@ -22,8 +26,8 @@ export const selectedProductsReducer = (state = {}, action) => {
     switch (action.type) {
         case 'SELECTED_PRODUCT':
             return { ...state, ...action.payload };
-        //   case ActionTypes.REMOVE_SELECTED_PRODUCT:
-        // return {};
+        case 'REMOVE_SELECTED_PRODUCT':
+            return {};
         default:
             return state;
     }
